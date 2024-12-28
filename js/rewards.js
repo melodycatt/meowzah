@@ -10,6 +10,7 @@ class Reward {
         "Rare",
         "Exotic",
         "Epic",
+        "unobtainable",
     ]
     static COLORS = {
         "Common": "#0a4a1b",
@@ -17,6 +18,7 @@ class Reward {
         "Rare": "#0a7874",
         "Exotic": "",
         "Epic": "#5500b0",
+        "unobtainable": "#000",
     }
     static WEIGHTS = {
         "Common": 0.25,
@@ -24,6 +26,7 @@ class Reward {
         "Rare": 0.0625,
         "Exotic": "#5500b0",
         "Epic": 0.015625 / 2,
+        "unobtainable": 0,
     }
     static VALUES = {
         "Common": 1,
@@ -31,12 +34,15 @@ class Reward {
         "Rare": 5,
         "Exotic": 10,
         "Epic": 50,
+        "unobtainable": 69696969696969,
     }
 
     name;
     img;
     weight;
 
+    description;
+    stats;
 
     shiny = true;
 
@@ -80,7 +86,7 @@ class Reward {
         return nr;
     }
 
-    constructor(name, img, weight, rarity, from = false) {
+    constructor(name, description, stats, img, weight, rarity, from = false) {
         if (!from) {
             if(!Reward.RARITIES.includes(rarity)) {
                 throw new Error("yohoho rarity bad")
@@ -99,6 +105,8 @@ class Reward {
             } else {
                 this.weight = weight;
             }
+            this.description = description;
+            this.stats = stats;
             this.name = name;
             this.img = img;     
             this.shinify()
@@ -246,49 +254,7 @@ class Item extends Reward {
 }
 
 const REWARDS = [
-    new Reward("Goop", "./img/items/goop.svg", -1, "Dirt"),
-    new Reward("Nightjar", "./img/items/nightjar.jpeg", -1, "Dirt"),
-    new Reward("Poop", "./img/items/poop.svg", -1, "Dirt"),
-    new Reward("Star", "./img/items/star.svg", -1, "Common"),
-    new Reward("Zooper Dooper", "./img/items/zooperdooper.png", -1, "Common"),
-    new Reward("Vinegar", "./img/items/vinegar.webp", -1, "Common"),
-    new Reward("Leek", "./img/items/leek.svg", -1, "Uncommon"),
-    new Reward("Clown", "./img/items/clown.svg", -1, "Uncommon"),
-    new Reward("Swivel Chair", "./img/items/swivelchair.avif", -1, "Uncommon"),
-    new Reward("Ferris", "./img/items/ferris.png", -1, "Uncommon"),
-    new Reward("Normal Distribution", "./img/items/normaldistribution.png", -1, "Rare"),
-    new Reward("Miku", "./img/items/miku.jpg", -1, "Rare"),
-    new Reward("Olive Oil", "./img/items/oliveoil.webp", -1, "Rare"),
-    new Reward("Casio fx-8200 AU", "./img/items/casio.webp", -1, "Rare"),
-    new Reward("Russia", "./img/items/russia.svg", 0.03124, "Elusive"),
-    new Reward("Italy", "./img/items/italy.svg", -1, "Elusive"),
-    new Reward("Estrogen", "./img/items/estrogen.jpg", -1, "Elusive"),
-    new Reward("Mitosis", "./img/items/mitosis.png", -1, "Epic"),
-    new Reward("Ben 10 Watch", "./img/items/ben10.jpg", -1, "Epic"),
-    new Reward("Sata Andagi", "./img/items/sataandagi.jpg", -1, "Rare"),
-    new Reward("VBucks", "./img/items/vbuck.webp", -1, "Epic"),
-    new Reward("Harkster", "./img/items/harkster.jpg", -1, "Legendary"),
-    new Reward("Osaka", "./img/items/osaka.webp", -1, "Legendary"),
-    new Reward("Charizard", "./img/items/charizard.jpg", -1, "Legendary"),
-    new Reward("Rainbow Goop", "./img/items/rainbowgoop.svg", -1, "Insane"),
-    new Reward("Download", "./img/items/download.svg", -1, "Mythical"),
-    new Reward("Freddy Fazbear", "./img/items/freddy.webp", -1, "Mythical"),
-    new Reward("Bonnie", "./img/items/bonnie.webp", -1, "Mythical"),
-    new Reward("Chica", "./img/items/chica.webp", -1, "Mythical"),
-    new Reward("Foxy", "./img/items/foxy.webp", -1, "Mythical"),
-    new Reward("Sun", "./img/items/sun.webp", -1, "Mythical"),
-    new Reward("Moon", "./img/items/moon.webp", -1, "Mythical"),
-    new Reward("Balloon Boy", "./img/items/balloonboy.webp", -1, "Mythical"),
-    new Reward("Montgomery Gator", "./img/items/montgomery.webp", -1, "Mythical"),
-    new Reward("Roxanne Wolf", "./img/items/roxanne.webp", -1, "Mythical"),
-    new Reward("Sukuna", "./img/items/sukuna.webp", -1, "Insane"),
-    new Reward("Nightmare Freddy", "./img/items/nightmarefreddy.webp", -1, "Insane"),
-    new Reward("Nightmare Bonnie", "./img/items/nightmarebonnie.webp", -1, "Insane"),
-    new Reward("Nightmare Chica", "./img/items/nightmarechica.webp", -1, "Insane"),
-    new Reward("Nightmare foxy", "./img/items/nightmarefoxy.webp", -1, "Insane"),
-    new Reward("Man", "./img/items/man.png", -1, "Unique"),
-    new Reward("World Peace", "./img/items/worldpeace.png", -1, "Unique"),
-    new Reward("Queen Elizabeth II", "./img/items/liz.webp", -1, "Unique"),
+    new Reward("name", "desc", [0,0,0,0], "img", -1, "unobtainable"),
 ]
 const t = REWARDS.reduce((px, x) => { return px + x.weight}, 0);
 
