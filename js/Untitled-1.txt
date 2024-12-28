@@ -1,0 +1,10 @@
+NAME - RARITY - ATK/DEF/HP/SPD
+
+kitty - exotic - 3/3/3/3
+on attack, subtract 1 from the target's speed or defense
+
+the glass claw - uncommon` - 6/0/1/6
+no other effects
+
+cat flap thing - rare - 0/0/1/-1
+this card makes itself the target of any attack on use
