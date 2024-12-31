@@ -25,10 +25,16 @@ html, body, #content {
     width: max-content !important;
 }
 
-button {
+#roll {
     padding: 5px;
     border: 1px gray outset;
     border-radius: 0;
+}
+
+button {
+    font-family: monospace;
+    padding: 1px 2px;
+    border: 1px gray outset;
 }
 
 #row1 {
@@ -37,5 +43,34 @@ button {
 
 #inventory {
     padding: 3px;
-    border: 2px solid black
+    border: 2px solid gray
+}
+
+#inventory > span {
+    text-decoration: underline;
+}
+
+.icard {
+    display: flex;
+    align-items: center;
+}
+
+.cardnum {
+    display: inline-block;
+    width: 30px;
+    height: 12px;
+    margin: 2px 5px 2px 0px;
+}
+
+.cardtitle {
+    display: inline-block;
+    margin-right: 4px
+}
+.cardcount {
+    display: inline-block;
+    margin-right: 13px
+}
+
+.cardsell {
+    margin-right: 2px;
 }

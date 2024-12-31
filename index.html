@@ -16,10 +16,18 @@
             <div id="row1">
                 <br><br>
                 <br>
-                <button onclick="roll()">Open a booster pack</button>
+                <button onclick="roll()" id="roll">Open a booster pack</button>
             </div>
             <div id="row2">
-                <div id="inventory">inventory</div>
+                <div id="inventory">
+                    <span>inventory</span>
+                    <div class="icard">
+                        <div class="cardtitle">kitty,</div> <div class="cardcount">1</div>
+                        <input type="number" id="card1num" class="cardnum">
+                        <button class="cardsell">sell</button>
+                        <button class="cardinspect">inspect</button>                       
+                    </div>
+                </div>
             </div>
         </section>
     </body>

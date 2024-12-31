@@ -123,6 +123,7 @@ class Reward {
     shinify() {
         if (Math.floor(Math.random() * 1863) == 0) this.shiny = true;
         else this.shiny = false;
+        return this.shinify
     }
 
     select() {
@@ -243,16 +244,6 @@ function RnS() {
 
 var ch;
 
-class Item extends Reward {
-    constructor (reward) {
-        this.name = reward.name;
-        this.color = reward.color;
-        this.rarity = reward.rarity;
-        this.weight = reward.weight;
-        this.img = reward.img.cloneNode(true)
-    }
-}
-
 const REWARDS = [
     new Reward("name", "desc", [0,0,0,0], "img", -1, "unobtainable"),
 ]
@@ -351,7 +342,7 @@ function roll(test = false) {
     var rolledItems = []
     for(let i = 0; i < 3; i++) {
         var r = RandomReward(!test, test);
-        inventory.push(r);
+        inv.push(new Card(r)); 
         rolledItems.push(r)
     }
     return rolledItems;
