@@ -71,9 +71,11 @@ function nipdeeznuts(n) {
 }
 
 const Dealer = new Auto('dealers', 10, "additive_sum", 2, 1000, 1, 5);
-const Farmer = new Auto('farmers', 125, "additive_sum", 20, 200, 3, 50);
+const Farm = new Auto('farmers', 125, "additive_sum", 20, 200, 3, 50);
+const Factory = new Auto('factories', 1350, "additive_sum", 200, 50, 9, 500);
 
 const autos = [
     Dealer,
-    Farmer,
+    Farm,
+    Factory
 ]
