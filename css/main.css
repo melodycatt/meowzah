@@ -81,3 +81,14 @@ button:active {
 .cardsell {
     margin-right: 2px;
 }
+
+#strains {
+    border: 3px outset black;
+    padding: 10px;
+    padding-top: 5px;
+}
+
+.section-title {
+    font-size: 15px;
+    text-decoration: underline;
+}

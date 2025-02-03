@@ -22,20 +22,35 @@
                 <div id="dealers-container">
                     <br><br>
                     <button onclick="Dealer.new()" id="dealer">buy new dealer</button><span id="dealers">0</span><span id="dealers-cost"> | cost: 10 catnip</span><br>
-                    <span>+1 cps (catnip per second)</span>
+                    <span>+0.5 cps (catnip per second)</span><br>
+                    <span id="dealers-cps"></span>
                 </div>
                 <div id="farmers-container" style="display: none;">
                     <br><br>
-                    <button onclick="Farm.new()" id="farmer">buy new farm</button><span id="farmers">0</span><span id="farmers-cost"> | cost: 125 catnip</span><br>
-                    <span>+15 cps</span>
+                    <button onclick="Farm.new()" id="farmer">buy new farm</button><span id="farmers">0</span><span id="farmers-cost"> | cost: 150 catnip</span><br>
+                    <span>+6 cps</span><br>
+                    <span id="farmers-cps"></span>
                 </div>
                 <div id="factories-container" style="display: none;">
                     <br><br>
-                    <button onclick="Farmer.new()" id="farmer">buy new factory</button><span id="factories">0</span><span id="factories-cost"> | cost: 1350 catnip</span><br>
-                    <span>+180 cps</span>
+                    <button onclick="Factory.new()" id="farmer">buy new factory</button><span id="factories">0</span><span id="factories-cost"> | cost: 1750 catnip</span><br>
+                    <span>+80 cps</span><br>
+                    <span id="factories-cps"></span>
+                </div>
+                <br><br>
+                <div id="strains">
+                    <div class="section-title">catnip strains</div>
+                    <button onclick="new_strain()">new catnip strain</button><span> | cost 50000 catnip</span>
                 </div>
             </div>
             <div id="row2">
+                ideas:
+                <ul>
+                    <li>strands of catnip</li>
+                    <li>dna and strand breeding</li>
+                    <li>strands monmey and more produce and stuff</li>
+                    <li>sell catnip like buy differenmt stores as fronts and get workers like cgrunts snd stuff</li>
+                </ul>
             </div>
         </section>
     </body>
